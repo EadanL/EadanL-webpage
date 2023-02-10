@@ -1,0 +1,275 @@
+/* globals */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+/* GLOBAL - page layout */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+  display: inherit;
+  flex-direction: inherit;
+}
+
+section {
+  flex-grow: 1;
+  min-height: inherit;
+  box-sizing: border-box;
+}
+
+footer .frame {
+  border-top: 1px solid lightgray;
+}
+
+/* GLOBALS - section layout */
+
+.frame {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 40px 20px;
+}
+
+.columns {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200;
+}
+
+.columns > .column {
+  flex: auto;
+  padding: 20px 20px 20px 50px;
+  height: inherit;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 699px;
+}
+
+.columns > .column:first-of-type {
+  flex: 1;
+  max-width: 300px;
+}
+
+@media screen and (max-width: 950px) {
+  .columns {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .columns .column {
+    margin: 50px;
+    object-position: center;
+    padding: 0;
+    max-width: none;
+  }
+
+  .columns .column:first-of-type {
+    margin: auto;
+    width: auto;
+  }
+
+  .column .about > h1 {
+    text-align: center;
+  }
+
+  .column .checkboxes .left {
+    flex: 1;
+  }
+}
+
+/* GLOBAL - page elements */
+
+:where(h1, h2, h3, h4, h5, h6):first-of-type {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 950px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 200px;
+  aspect-ratio: 1;
+  margin: 0 auto 20px;
+}
+
+.avatar > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.email {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+.profile > h2,
+h3 {
+  margin: 0 0 8px;
+}
+
+.divider {
+  height: calc(100% - 40px);
+  width: 1px;
+  background-color: lightgray;
+}
+
+@media screen and (max-width: 950px) {
+  .divider {
+    display: none;
+  }
+}
+
+/* NAV */
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-color: whitesmoke;
+  border-top: 3px solid blueviolet;
+  border-bottom: 1px solid lightgray;
+}
+
+nav li {
+  list-style: none;
+  margin: 5px;
+  padding: 12px;
+  margin-inline: 20px;
+}
+
+nav li a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(85, 85, 85);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+nav li a:hover {
+  color: blueviolet;
+}
+
+nav .is-active * {
+  color: blueviolet;
+}
+
+/* CONTENT */
+.CONTENT .profile * {
+  display: flex;
+  justify-content: center;
+}
+
+.CONTENT .no-style {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.CONTENT .interests {
+  margin: 0;
+  padding: 50px 0 0;
+}
+
+.CONTENT .interests * {
+  list-style: none;
+  padding: 0 0 15px;
+}
+
+.CONTENT .interests li::before {
+  content: "- ";
+}
+
+.CONTENT .inline-link {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+.CONTENT .history {
+  display: flex;
+  margin: -10px;
+}
+
+.CONTENT .history .left,
+.CONTENT .history .right {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.CONTENT .history .left {
+  flex: 1;
+}
+
+.CONTENT .history .right * {
+  margin: 0;
+  text-align: right;
+}
+
+.CONTENT .history .position {
+  margin: 0 0 8px;
+}
+
+.CONTENT .history .location {
+  margin-top: 0;
+}
+
+.CONTENT .checkboxes {
+  display: flex;
+}
+
+.CONTENT .checkboxes .left,
+.CONTENT .checkboxes .right {
+  margin: 0;
+  padding: 10px;
+}
+
+.CONTENT .checkboxes .right {
+  flex: 1;
+}
+
+.CONTENT .checkboxes p {
+  margin: 0 0 5px;
+}
+
+.CONTENT .resume {
+  margin: 100px 0 0;
+  padding: 0;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  padding-top: 30px;
+}
+
+footer > .frame {
+  text-align: center;
+}
